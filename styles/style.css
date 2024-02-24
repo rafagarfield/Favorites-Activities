@@ -1,0 +1,46 @@
+#form-section {
+    /* Estilos para la sección */
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#form-section form {
+    /* Estilos para el formulario dentro de la sección */
+    margin-top: 20px;
+}
+
+#form-section .input-group {
+    /* Estilos para los grupos de entrada */
+    margin-bottom: 15px;
+}
+
+#form-section label {
+    /* Estilos para las etiquetas dentro de la sección */
+    font-weight: bold;
+}
+
+#form-section input[type="text"],
+#form-section textarea {
+    /* Estilos para los campos de entrada de texto */
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#form-section button {
+    /* Estilos para el botón de envío */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form-section button:hover {
+    /* Estilos al pasar el ratón sobre el botón de envío */
+    background-color: #45a049;
+}
