@@ -1,58 +1,59 @@
-class Course{
-    constructor(id,name,question,image){
+class Activity{
+    constructor(id,title,description,imgUrl){
         this.id = id;
-        this.name = name;
-        this.question = question;
-        this.image = image;
+        this.title = title;
+        this.description = description;
+        this.imgUrl = imgUrl;
 
     }
 }
 
-class Repository {
+class Repository{
     constructor(){
-        this.courses= [];
-        this.id= 0;
-
+        this.activities= [];
+        this.id = 0;
     }
 
-    getAllCourses() {
-        return this.courses
+    getAllActivities(){
+        return this.activities
     }
 
-    createCourses(name,question,image){
+    createActivity(title, description,imgUrl){
         this.id++;
-        const course= new Course(this.id, name ,question,image);
-        this.courses.push(course);
+        const activity= new Activity(this.id,title, description,imgUrl);
+        this.activities.push(activity);
 
     }
-    deleteCourses(id){
-        this.courses=this.courses.filter(coursess => coursess.id !== id);
+
+    deleteActivity(id){
+        this.activities=this.activities.filter(activity=> activity.id !== id);
     }
+
 }
 
-/* const repo1= new Repository();
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
-repo1.createCourses("mate","1+1=2","www.exambhhhple.com");
+const repository= new Repository();
+
+/* repository.createActivity("leer","me gusta leer","www.leer.com");
+repository.createActivity("leer","me gusta leer","www.leer.com");
+repository.createActivity("leer","me gusta leer","www.leer.com");
+repository.createActivity("leer","me gusta leer","www.leer.com");
+
+console.log(repository.getAllActivities()); */
 
 
-console.log(repo1.deleteCourses(2));
-console.log(repo1.getAllCourses()); */
+function cardGenerator(activity){
+    const {id,title,description,imgUrl} = activity;
+    const card= document.createElement("div");
+    card.innerHTML=`
+    <h3> ${title}  </h3>
+    <p>${description}</p>
+    <img src=${imgUrl}>`
 
-function cardGenerator(courses) {
-    const {id, name, description, image} = courses;
-
-    const card=document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-        <h3 class="card-title">${name}</h3>
-        <p class="card-text">${description}</p>
-        <img src=${image} class="card-img-top" alt="...">
-    `;
-    return card
+    return card;
 }
- 
+
+function getActivities(){
+
+    const container=document.getElementById("container-card")
+
+}
